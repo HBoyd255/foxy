@@ -2,6 +2,7 @@ from modules.is_app_open import is_app_open_on_current_desktop
 
 import os
 import sys
+import subprocess
 
 FIREFOX_DIRECTORY = "C:\\Program Files\\Mozilla Firefox"
 
@@ -25,7 +26,7 @@ def main():
         tab_or_window = "--new-window"
 
     # Open firefox with the arguments.
-    os.system(f"firefox.exe {tab_or_window} {arguments}")
+    subprocess.Popen(["firefox.exe", tab_or_window, arguments])
 
 
 if __name__ == "__main__":
