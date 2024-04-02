@@ -5,6 +5,7 @@ import sys
 
 FIREFOX_DIRECTORY = "C:\\Program Files\\Mozilla Firefox"
 
+
 def main():
 
     # Change the current directory to the location of firefox.
@@ -13,9 +14,13 @@ def main():
     # Combine the arguments received  by this script into one string.
     arguments = " ".join(sys.argv[1:])
 
+    print(arguments)
+
     # If firefox is not open on the current desktop, add the new-window flag.
     if not is_app_open_on_current_desktop("firefox"):
-        arguments += " --new-window"
+        arguments = "--new-window " + arguments
+
+    print(arguments)
 
     # Open firefox with the arguments.
     os.system(f"firefox.exe {arguments}")
