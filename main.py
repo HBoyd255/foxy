@@ -14,16 +14,18 @@ def main():
     # Combine the arguments received  by this script into one string.
     arguments = " ".join(sys.argv[1:])
 
-    print(arguments)
+    if arguments == "":
+        arguments = "about:newtab"
 
-    # If firefox is not open on the current desktop, add the new-window flag.
+    # By default, open a new tab.
+    tab_or_window = "--new-tab"
+
+    # If firefox is not open on the current desktop, open a new window.
     if not is_app_open_on_current_desktop("firefox"):
-        arguments = "--new-window " + arguments
-
-    print(arguments)
+        tab_or_window = "--new-window"
 
     # Open firefox with the arguments.
-    os.system(f"firefox.exe {arguments}")
+    os.system(f"firefox.exe {tab_or_window} {arguments}")
 
 
 if __name__ == "__main__":
