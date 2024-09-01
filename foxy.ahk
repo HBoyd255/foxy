@@ -3,10 +3,10 @@ PythonPath := "pythonw.exe"
 ScripePath := "main.py"
 
 ; Get the directory of the this script.
-DirecoryLocation = %A_ScriptDir%\
+DirectoryLocation = %A_ScriptDir%\
 
 ; Get the full path of the script.
-FullScriptPath := DirecoryLocation . ScripePath
+FullScriptPath := DirectoryLocation . ScriptPath
 
 args := ""
 Loop, %0% ; For each parameter,
